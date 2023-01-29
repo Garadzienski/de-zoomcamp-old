@@ -1,12 +1,12 @@
 # The code from the first homework SQL/DOCKER 
 
-\
+
 **NOTE!** uploaded all column headers in both tables lowercase using the command ***df.columns=df.columns.str.lower()***
 
 ### **Question 3. Count records**
 #### How many taxi trips were totally made on January 15? 
 Tip: started and finished on 2019-01-15. 
-\
+
 SELECT 
 	COUNT(1) 
 FROM 
@@ -18,7 +18,7 @@ WHERE
 
 ### **Question 4. Largest trip for each day**
 #### Which was the day with the largest trip distance Use the pick up time for your calculations?
-\
+
 SELECT
 	lpep_pickup_datetime::DATE
 	,MAX(trip_distance) AS max_distance
@@ -32,7 +32,7 @@ LIMIT 1
 
 ### **Question 5. The number of passengers**
 #### In 2019-01-01 how many trips had 2 and 3 passengers?
-\
+
 SELECT
 	 passenger_count
 	,COUNT(*) AS trips_count
@@ -50,7 +50,7 @@ ORDER BY
 ### **Question 6. Largest tip**
 #### For the passengers picked up in the Astoria Zone which was the drop off zone that had the largest tip? We want the name of the zone, not the id.
 Note: it's not a typo, it's tip , not trip
-\
+
 SELECT 
 	dropoffzone.zone AS destination
 	,MAX(tip_amount) AS max_tip
