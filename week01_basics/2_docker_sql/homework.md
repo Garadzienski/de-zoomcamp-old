@@ -30,3 +30,14 @@ LIMIT 1
 
 ### **Question 5. The number of passengers**
 #### In 2019-01-01 how many trips had 2 and 3 passengers?
+SELECT
+	 passenger_count
+	,COUNT(*) AS trips_count
+FROM
+	green_taxi_data
+WHERE
+	(passenger_count = 2 AND lpep_pickup_datetime::DATE = '2019-01-01')
+	OR
+	(passenger_count = 3 AND lpep_pickup_datetime::DATE = '2019-01-01')
+GROUP BY passenger_count
+ORDER BY passenger_count;
