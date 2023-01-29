@@ -4,7 +4,6 @@
 #### How many taxi trips were totally made on January 15? 
 Tip: started and finished on 2019-01-15. 
 \
-\
 SELECT 
 	COUNT(1) 
 FROM 
@@ -30,6 +29,7 @@ LIMIT 1
 
 ### **Question 5. The number of passengers**
 #### In 2019-01-01 how many trips had 2 and 3 passengers?
+\
 SELECT
 	 passenger_count
 	,COUNT(*) AS trips_count
@@ -41,3 +41,8 @@ WHERE
 	(passenger_count = 3 AND lpep_pickup_datetime::DATE = '2019-01-01')
 GROUP BY passenger_count
 ORDER BY passenger_count;
+
+### **Question 6. Largest tip**
+#### For the passengers picked up in the Astoria Zone which was the drop off zone that had the largest tip? We want the name of the zone, not the id.
+Note: it's not a typo, it's tip , not trip
+\
