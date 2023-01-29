@@ -28,7 +28,7 @@ GROUP BY
 	lpep_pickup_datetime::DATE
 ORDER BY
 	max_distance DESC
-LIMIT 1
+LIMIT 1;
 
 ### **Question 5. The number of passengers**
 #### In 2019-01-01 how many trips had 2 and 3 passengers?
@@ -69,4 +69,4 @@ GROUP BY
 	,dropoffzone.zone
 ORDER BY
 	max_tip DESC
-LIMIT 1
+LIMIT 1;
