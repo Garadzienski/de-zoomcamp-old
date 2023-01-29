@@ -45,4 +45,23 @@ ORDER BY passenger_count;
 ### **Question 6. Largest tip**
 #### For the passengers picked up in the Astoria Zone which was the drop off zone that had the largest tip? We want the name of the zone, not the id.
 Note: it's not a typo, it's tip , not trip
-
+\
+SELECT 
+	dropoffzone.zone AS destination
+	,MAX(tip_amount) AS max_tip
+FROM 
+	green_taxi_data AS taxidata
+INNER JOIN
+	taxi_zones as pickupzone
+	ON	pickupzone.locationid = taxidata.pulocationid
+LEFT JOIN
+	taxi_zones as dropoffzone
+	ON	dropoffzone.locationid = taxidata.dolocationid
+WHERE 
+	pickupzone.zone = 'Astoria'
+GROUP BY
+	pickupzone.zone
+	,dropoffzone.zone
+ORDER BY
+	max_tip DESC
+LIMIT 1
