@@ -2,7 +2,7 @@
 
 \
 PS - uploaded all column headers in both tables lowercase using the command ***df.columns=df.columns.str.lower()***
-\
+
 ### **Question 3. Count records**
 #### How many taxi trips were totally made on January 15? 
 Tip: started and finished on 2019-01-15. 
