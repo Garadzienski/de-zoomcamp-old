@@ -16,3 +16,15 @@ WHERE
 
 ### **Question 4. Largest trip for each day**
 #### Which was the day with the largest trip distance Use the pick up time for your calculations?
+\
+\
+SELECT
+	lpep_pickup_datetime::DATE
+	,MAX(trip_distance) AS max_distance
+FROM
+	green_taxi_data
+GROUP BY
+	lpep_pickup_datetime::DATE
+ORDER BY
+	max_distance DESC
+LIMIT 1
